@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Cite this version of the research release."
+type: software
+title: "Local dimension of geometric continued-fraction spectra"
+authors:
+  - name: "DannyExperiments"
+version: "1.0.0"
+repository-code: "https://github.com/DannyExperiments/geometric-spectrum-local-dimension"
+date-released: 2026-11-27
+doi: "10.5281/zenodo.24588797"
+url: "https://doi.org/10.5281/zenodo.24588797"
+keywords:
+  - "continued fractions"
+  - "Hausdorff dimension"
+  - "dimension spectrum"
+  - "local Hausdorff dimension"
+  - "geometric alphabet"
+  - "upper box dimension"
+  - "conformal iterated function systems"

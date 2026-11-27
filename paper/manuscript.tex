@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\DeclareFontShape{OMX}{cmex}{m}{n}{<->cmex10}{}
+\DeclareMathSizes{8}{8}{8}{8}
+\DeclareMathSizes{9}{9}{8}{8}
+\DeclareMathSizes{10.95}{10.95}{8}{8}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}
+\title{Local dimension of geometric continued-fraction spectra}
+\begin{document}
+\begin{abstract}
+For integers $q\ge2$, we study the dimension spectrum $S$ of ordinary continued fractions with digits in $\{1,q,q^2,\ldots\}$. Above $t=\log 2/(2\log q)$ the spectrum is nowhere dense, answering a question of Chitanga, Lemmens and Nussbaum. In fact its local Hausdorff dimension at $d\in S$ is $\min(1,t/d)$, with value one at zero. A uniform truncation estimate gives the upper bound and a first-difference separation estimate gives the lower bound.
+\end{abstract}
+\maketitle
+
+Let $q\ge2$ be an integer and $P_q^*=\{q^i:i\ge0\}$. For $F\subseteq P_q^*$ let $J_F$ consist of the irrationals in $(0,1)$ whose ordinary continued-fraction digits all lie in $F$. Write $d(F)=\dim_H J_F$ with $d(\varnothing)=0$ and set $S=\{d(F):F\subseteq P_q^*\}$. Chitanga, Lemmens and Nussbaum \cite[Section~9]{cln} ask whether $S$ is nowhere dense on $(t,d(P_q^*\setminus\{q\}))$ for $q\ge3$, where $t=\log2/(2\log q)$. This is catalog question Q1536 \cite{q}. Local Hausdorff dimension at $d$ means $\lim_{\varepsilon\downarrow0}\dim_H(S\cap(d-\varepsilon,d+\varepsilon))$.
+
+\begin{theorem}
+For every $t<a\le1$, the upper box dimension of $S\cap[a,1]$ is at most $t/a$, with the empty case vacuous. In particular, $S$ is nowhere dense relative to $(t,\infty)$. For every $d\in S$, its local Hausdorff dimension in $S$ is one for $d\le t$, and $t/d$ for $d>t$.
+\end{theorem}
+
+\section{A uniform prefix cover}
+For the inverse branches $f_n(x)=1/(n+x)$, let
+\[
+(L_{s,F}g)(x)=\sum_{n\in F}(n+x)^{-2s}g(f_n(x)),\qquad 0\le x\le1 .
+\]
+For finite $F$ with $s=d(F)>0$, the spectral radius is one at $s$ and strictly decreases with exponent by \cite[Theorem~1.6]{cln}. The same theorem gives a positive eigenfunction $v$ normalized by $v(0)=1$, with $e^{-2sx}\le v(x)\le1$. In particular $v\ge e^{-2}$ since $s\le1$. We use finite exhaustion to compute $d(F)$ for infinite $F$ \cite[Theorem~2.4]{cln}, and spectral comparisons obtained by iteration in the supremum norm weighted by a strictly positive continuous function.
+
+Fix $0<a\le1$. If $F$ is finite and $s=d(F)\ge a/2$, let $F_N=F\cap\{1,q,\ldots,q^N\}$. Dropping the omitted terms gives $L_{s,F_N}v\ge(1-\eta)v$ for $\eta=e^2\sum_{i>N}q^{-2is}$. Uniformly over $s\ge a/2$, choose $N$ large enough so that $\eta<1/2$ and $\epsilon=-\log(1-\eta)/\log2<a/2$. Every two-step inverse branch has derivative magnitude $1/(m(n+x)+1)^2\le 1/4$. Hence on nonnegative functions $L_{s-\epsilon,F_N}^2\ge4^\epsilon L_{s,F_N}^2$, which sends $v$ to at least $4^\epsilon(1-\eta)^2 v=v$. Thus $r(L_{s-\epsilon,F_N})\ge1$. In particular $F_N$ is nonempty and cannot be a singleton, since for a singleton the same derivative bound gives radius strictly below one at positive exponent. It follows that $d(F_N)\ge s-\epsilon$. Summing the geometric series and using $-\log(1-\eta)\le2\eta$ proves
+\begin{equation}
+0\le d(F)-d(F_N)\le C_a q^{-2N d(F)}.
+\label{diam}
+\end{equation}
+Here $C_a$ is independent of $F,N$. For infinite $F$ with $d(F)\ge a$, exhaust by finite alphabets containing $F_N$ whose dimensions tend to $d(F)$. They eventually have dimensions at least $a/2$ and \eqref{diam} follows in the limit.
+
+There are at most $2^{N+1}$ prefix dimensions. Equation \eqref{diam} provides an interval of length $C_a q^{-2Na}$ starting at each one and together these cover $S\cap[a,1]$. The ratio of successive length scales is constant. The upper box dimension is therefore at most $\log 2/(2a\log q)=t/a$. When $a>t$ it is below one, so the closure of this slice contains no interval. Every point above $t$ has a neighborhood bounded below by some $a>t$, giving the relative nowhere density.
+
+\section{Separation and the lower estimate}
+Fix $t<a<b$, and a finite prefix through exponent $N$ with dimension at least $a$ whose every completion has dimension at most $b$. Consider two such completions whose first differing exponent is $k>N$. Write $C$ for the common alphabet below $q^k$, $A=C\cup\{q^k\}$ and $U=C\cup\{q^i:i>k\}$. The completion with this digit contains $A$, and the other is contained in $U$. Put $s=d(A)\in[a,b]$ and choose the normalized eigenfunction $v$ at $s$. Uniformly in $x$, the contribution of digit $q^i$ lies between $q^{-2is}e^{-4s/q^i}$ and $q^{-2is}$: use $(1+x/q^i)^{-2s}\ge e^{-2s/q^i}$ and $v(f_{q^i}(x))\ge e^{-2s/q^i}$. The tail is at most $q^{-2ks}/(q^{2a}-1)$. Since $a>t$, this coefficient is below one. Since $s\le1$, there exist $c>0$ and $K$ depending just on $q,a$ such that at every $k\ge K$,
+\[
+L_{s,U}v\le v-cq^{-2ks}.
+\]
+For exponents at least $a/2$, the operator family is Lipschitz in operator norm, uniformly over subalphabets, with constant bounded by the convergent sum
+\[
+D=\sum_{i\ge0} 2\log(q^i+1)q^{-ia}.
+\]
+This follows by bounding the exponent derivative of each weight. Take $0<\kappa\le a/2$ with $D\kappa\le c/2$. At $s'=s-\kappa q^{-2bk}\ge a/2$, every finite $G\subseteq U$ satisfies
+\[
+L_{s',G}v\le v-\tfrac c2 q^{-2bk}\le(1-\tfrac c2 q^{-2bk})v.
+\]
+The bound uses $\|v\|_\infty=1$ and $s\le b$. Each finite $G$ has dimension at most $s'$, including empty or singleton $G$. Finite exhaustion gives $d(U)\le s'$.
+
+Choose $N\ge K$ large enough for \eqref{diam}. The completion-dimension map on the product of tail bit choices is continuous since completions agreeing through $m$ lie in the same interval of length $C_a q^{-2am}$ from \eqref{diam}. Distinct level-$k$ cylinders, specified by the bits $N+1,\ldots,k$, have images separated by at least $\kappa q^{-2bk}$, using their first differing exponent. The pushforward of independent fair bits gives each level-$k$ image mass $2^{N-k}$. For sufficiently small $\ell>0$, choose $k$ with
+\[
+\kappa q^{-2b(k+1)}\le\ell<\kappa q^{-2bk}.
+\]
+An interval of length $\ell$ intersects at most one level-$k$ image and has measure at most $2^{N-k}\le 2^{N+1}\kappa^{-t/b}\ell^{t/b}$. The mass distribution principle yields a Hausdorff dimension of at least $t/b$ for the completion image.
+
+\newpage
+\section{Local dimension}
+Fix $d\in S$ with $d>t$ and an alphabet realizing $d$. In any neighborhood choose $t<a<d<b$ with $[a,b]$ contained there, allowing $b>1$ at an endpoint. For all sufficiently large $N$ the realizing alphabet's prefix has dimension at least $a$ by finite exhaustion. Each completion has dimension at least $a$ and exceeds the prefix dimension by at most $C_a q^{-2Na}$, so for large $N$ all completions have dimension at most $b$. The neighborhood therefore has dimension at least $t/b$. Let $b\downarrow d$. For the reverse bound use the upper estimate at $a=d-\varepsilon>t$ and let $\varepsilon\downarrow0$. At $0\le d\le t$ the known interval $[0,t]\subseteq S$ gives local dimension one, by \cite[Theorem~1.4]{cln} for every $q\ge2$.
+
+\section{Scope and antecedents}
+Chitanga's thesis \cite[Theorems~5.2--5.3 and Section~5.2]{thesis} proves upper subregion results and uses the same geometric comparison of a large digit with its tail. Here the uniform truncation bound and the quantitative separation apply at every dimension level strictly above $t$. Das and Simmons \cite[Conjecture~5.4 and Remark~5.6]{ds} proposed this profile for conformal dimension spectra. The theorem verifies that profile for this family. The proof is analytic. Finite replay illustrates the bounds, no Lean formalization was attempted, and external peer review is pending.
+
+\begin{thebibliography}{9}
+\bibitem{cln} P. Chitanga, B. Lemmens and R. Nussbaum, On the structure of the dimension spectrum for continued fraction expansions, \emph{Indag. Math.} 37 (2026), 1960--1989. \href{https://doi.org/10.1016/j.indag.2026.03.008}{DOI 10.1016/j.indag.2026.03.008}.
+\bibitem{thesis} P. Chitanga, \emph{On the Dimension Spectrum of Infinite Subsystems of Continued Fractions and Perron-Frobenius Operators}, doctoral thesis, University of Kent, 2026. \href{https://kar.kent.ac.uk/114012/}{Kent Research Archive}.
+\bibitem{ds} T. Das and D. Simmons, On the dimension spectra of infinite conformal iterated function systems, \emph{J. Fractal Geom.} 9 (2022), 73--87. \href{https://doi.org/10.4171/JFG/112}{DOI 10.4171/JFG/112}.
+\bibitem{q} Open Problems Catalog, \href{https://github.com/10m-u/open-problems-catalog/blob/ca8d4d44ba3db527f19f28928c240168f545ecfe/problems/mathematics/differential-equations-dynamical-systems.md\#q1536}{Q1536, pinned entry}.
+\end{thebibliography}
+\end{document}

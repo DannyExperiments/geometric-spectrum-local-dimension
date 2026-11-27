@@ -1,0 +1,31 @@
+{
+  "title": "Local dimension of geometric continued-fraction spectra",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "DannyExperiments"
+    }
+  ],
+  "description": "For each integer q≥2, the dimension spectrum for digits {1,q,q²,…} is nowhere dense above t=log(2)/(2log(q)). At a dimension d in this spectrum the local Hausdorff dimension equals 1 for d≤t and t/d for d>t. For a>t the upper box dimension of the slice at or above a is at most t/a.\n\nUniform dimension truncation turns each finite digit prefix into a short interval and gives the upper box bound. Above t the first differing digit eventually outweighs its whole geometric tail. A quantitative version separates completion cylinders and allows a Bernoulli mass bound, giving the matching local lower estimate.\n\nChitanga, Lemmens and Nussbaum establish the interval below t and nowhere-density results higher up. Chitanga’s thesis extends the latter to upper subregions of the interval in question, and already uses the same geometric tail factor in its breakpoint estimates, including Theorem 4.12 and Chapter 5. Uniform truncation and quantitative first-difference separation on every slice above t give the exact profile in this family. The profile has the form proposed by Das and Simmons.\n\nThe topology above the threshold and the local dimension profile are proved for the augmented geometric alphabets. The general conformal iterated-function-system conjecture remains outside this result. Finite replay checks the symbolic and numerical examples used to illustrate the analytic proof. The manuscript contains the proof. Independent review checked the analytic derivation, the tail estimates and the source quantifiers. No Lean formalization was attempted. External peer review is pending.\n\nUnder human direction, ChatGPT Astra 6.2 (OpenAI) generated the discovery proof packet. OpenAI Codex carried out the release review. GPT‑6.2 Sol compared primary literature, prepared a manuscript from the proof packet, and built the illustration and packaging checks. DannyExperiments is the repository maintainer and preferred citation identity.",
+  "keywords": [
+    "continued fractions",
+    "Hausdorff dimension",
+    "dimension spectrum",
+    "local Hausdorff dimension",
+    "geometric alphabet",
+    "upper box dimension",
+    "conformal iterated function systems"
+  ],
+  "access_right": "open",
+  "license": "other-closed",
+  "notes": "All rights reserved. Publicly downloadable files are supplied without a repository-wide reuse license.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/DannyExperiments/geometric-spectrum-local-dimension/releases/tag/v1.0.0",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "publication_date": "2026-11-27"
+}
